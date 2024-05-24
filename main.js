@@ -1,0 +1,57 @@
+// toggle navbar
+
+let nemuIcon=document.querySelector('#menu-icon');
+let navbar=document.querySelector('.navbar')
+
+menubar.onclick =()=>{
+    menubar.classList.toggle('fa-xmark');
+    navbar.classList.toggle('active')
+}
+
+let scetion=document.querySelectorAll('section');
+let navLinks=document.querySelectorAll('header nav a');
+window.onscroll=()=>{
+    scetion.forEach(sec=>{
+        let top=window.scrollY;
+        let offset=sec.offsetHeight;
+        let id=sec.getAttribute('id');
+
+        if(top>= offset && top<offset +height)
+        {
+            navLinks.forEach.apply(links=>{
+                links.classList.remove('active');
+                document.querySelector('header nav a[href'=']' +id + ']').classList.add(active);
+            });
+        };
+
+
+    });
+
+    let header=document.querySelector('header');
+    header.classList.toggle('sticky'.window.scrollY>100);
+
+    menubar.classList.remove('fa-xmark');
+    navLinks.classList.remove('active');
+
+
+
+};
+ScrollRveal({
+    distance:'80px',
+    duration:2000,
+    delay:200,
+});
+ScrollRveal().reveal('.home-content,heading',{origin:'top'});
+ScrollRveal().reveal('.home-img,.services-container,.portfolio-box,contact form',{origin:'button'});
+ScrollRveal().reveal('.home-content h1,.about-img',{origin:'left'});
+
+ScrollRveal().reveal('.home-content p,.about-content',{origin:'right'});
+
+const typed=new Typed('.multiple-text',{
+    strings:['Frontend Developer','Web Designer','Youtuber'],
+    typeSpeed:70,
+    backSpeed:70,
+    backDelay:1000,
+    loop:true,
+
+});
